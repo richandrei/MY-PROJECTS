@@ -1,0 +1,95 @@
+import time
+import pyfiglet
+question = input("What is your name?: ")
+greeting = "Good Day,"
+closing = "Thank you!"
+ascii_art = pyfiglet.figlet_format(question)
+ascii_art_2 = pyfiglet.figlet_format(greeting)
+ascii_art_3 = pyfiglet.figlet_format(closing)
+print(ascii_art_2 + ascii_art)
+
+while True:
+    choice = input("\nWhat would you like to do?: \n"
+               "A. Let's do some math! \n"
+               "B. Play Guess the Scientist! \n"
+                "C: I wanna quit. ").lower()
+
+    if choice == "a":
+        X = int(input("Give your first number: "))
+        Y = int(input("Give your second number: "))
+
+        print ("\n1. Addition (+)")
+        print ("2. Subtraction (-)")
+        print ("3. Multiplication (*)")
+        print ("4. Division (/)")
+        print ("5. Remainder (%)")
+        print ("6. Floor Division (//)")
+        print ("7. Exponents (**)")
+        print ("8. Quit")
+
+        choice_2 = (input("Choose your operation: "))
+        if choice_2 == "1":
+            print (X + Y)
+        if choice_2 == "2":
+            print (X - Y)
+        if choice_2 == "3":
+            print (X * Y)
+        if choice_2 == "4":
+            print (X / Y)
+        if choice_2 == "5":
+            print (X % Y)
+        if choice_2 == "6":
+            print (X // Y)
+        if choice_2 == "7":
+            print (X ** Y)
+        if choice_2 == "8":
+            break
+
+    if choice == "b":
+        score = 0
+        print ("\nYou chose: B. Guess the Scientist!")
+        time.sleep(3)
+        print ("\nOn to the FIRST QUESTION! (You have to get first and last name correct!)")
+        time.sleep(3)
+        Q_1 = (input("\nQUESTION 1: Who was the scientist who coined the equation E=mc^2? \n"
+                     "\n"
+                     "(Type 'q' to quit.) ")).lower()
+        if Q_1 == "q":
+            break
+        elif Q_1 == "albert einstein":
+            print("You're CORRECT! You're so smart, bro!")
+            score += 1
+        else:
+            print("Sorry, that's wrong!")
+        time.sleep(2)
+        print("\nOn to the SECOND QUESTION!")
+        time.sleep(2)
+        Q_2 = (input("\nQUESTION 2: Who was the scientist who discovered the laws of gravity?"
+                     "\n"
+                     "(Type 'q' to quit.) ")).lower()
+        if Q_2 == "q":
+                break
+        elif Q_2 == "isaac newton":
+            print("Wow! You're a GENIUS!")
+            score += 1
+        else:
+            print("Not quite right!")
+        time.sleep(2)
+        print("\nOn to the LAST QUESTION!")
+        time.sleep(2)
+        Q_3 = (input("\nQUESTION 3: Who was the scientist who was named after a famous vehicle brand? "))
+        if Q_3 == "q":
+            break
+        elif Q_3 == "nikola tesla":
+            print("GOOD JOB! You were correct.")
+            score += 1
+        else:
+            print("Sorry, that's wrong!")
+        time.sleep(2)
+        print(f"\nThanks for playing! You had {score}/3 questions correct! Nice one!")
+
+    if choice == "c":
+        print(ascii_art_3)
+        break
+
+
